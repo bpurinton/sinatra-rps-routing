@@ -26,7 +26,7 @@
     // "Gem*": true,
     "install-packages": true,
     "main.rb": true,
-    "README.md": true,
+    // "README.md": true,
     // "app.rb": true,
     // "environment.rb": true,
     // "bin/": true,
