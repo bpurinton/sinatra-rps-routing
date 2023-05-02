@@ -30,7 +30,10 @@ get('/') do
   # "Hello, world!"
 
   # we can pass HTML
-  "<h1>Hello, world!</h1>"
+  # "<h1>Hello, world!</h1>"
+
+  # lets actually setup our homepage
+  erb(:rules)
 end
 
 # we can define another route to our rock page
@@ -45,4 +48,9 @@ get('/rock') do
   # and render a new type of file from there
   # we call the file "views/rock.html.erb"
   erb(:rock)
+end
+
+# let's define a paper route
+get('/paper') do
+  erb(:paper)
 end
