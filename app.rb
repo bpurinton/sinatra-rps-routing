@@ -24,6 +24,11 @@ set(:port, 3000)
 # To open .html.erb files, need to register them
 Tilt.register(Tilt::ERBTemplate, 'html.erb')
 
+# alternative to setting the layout in every erb() call
+# we can set the default layout name to use and sinatra 
+# will look for that file
+set(:erb, :layout => :application_layout)
+
 # we define our first route with sinatra's get method
 get('/') do
   # we can pass plain text
@@ -33,7 +38,7 @@ get('/') do
   # "<h1>Hello, world!</h1>"
 
   # lets actually setup our homepage
-  erb(:rules)
+  erb(:rules)#, :layout => :application_layout)
 end
 
 # we can define another route to our rock page
@@ -47,7 +52,7 @@ get('/rock') do
   # but even better, we can make a views folder
   # and render a new type of file from there
   # we call the file "views/rock.html.erb"
-  erb(:rock)
+  erb(:rock)#, :layout => :application_layout)
 end
 
 # let's define a paper route
@@ -63,5 +68,5 @@ get('/paper') do
     @outcome = "lost"
   end
 
-  erb(:paper)
+  erb(:paper)#, :layout => :application_layout)
 end
